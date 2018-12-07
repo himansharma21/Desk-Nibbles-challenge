@@ -11,12 +11,9 @@ productStock = {}
 for cont in stockJsonData:
   if cont["title"] not in productStock: productStock[cont["title"]] = cont
 
-snacksStocked = []
-snackerEmail = []
 totalSnackerPrice = 0
 for snacker in snackerListJson:
   if snacker["fave_snack"] in productStock:
     print("{}: {}".format(snacker["email"], snacker["fave_snack"]))
     totalSnackerPrice += float(productStock[snacker["fave_snack"]]["variants"][0]["price"])
-print()
-print("Total Price: {}".format(totalSnackerPrice))
+print("\nTotal Price: {}".format(totalSnackerPrice))
